@@ -16,8 +16,8 @@ body{
 
 .whatsapp{
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 4.6%;
+    right: 4.6%;
     width: 70px;
     height: auto;
     z-index: 1005;
@@ -42,6 +42,7 @@ header h1{
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
+
 nav ul{
     display: flex;
     justify-content: space-between;
@@ -349,14 +350,12 @@ nav a:hover {
 
 label {
     display: block; 
-    margin-top: -20px;
     margin-bottom: 40px;
 }
 
 input,textarea {
     width: 70%; 
     padding: 10px; 
-    margin-bottom: 20px; 
     border: none; 
     border-bottom: 1px solid #4a4a4a;
     outline: none;
@@ -413,6 +412,10 @@ input,textarea {
     padding-bottom: 50px;
     overflow: hidden;
 }
+.ofrecemos1{
+    display: none;
+
+}
 
 .primerafila1{
     display: flex;
@@ -431,22 +434,28 @@ input,textarea {
     margin-top: 5%;
     opacity: 0;
     animation-duration: 4s;
+    
 }
 
 
 .cuadradito{
-    width: 30%;
+    width: 29%;
     height: 400px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     border-radius: 24px;
     text-align: center;
     padding: 30px;
+    opacity: 1;
+
     transition: transform 0.5s ease;
     cursor: pointer;
+    
 }
 .cuadradito:hover{
     transform: scale(1.1);
+    z-index: 30;
 }
+
 .cuadradito h3{
     font-weight: 400;
     font-style: italic;
@@ -476,23 +485,32 @@ input,textarea {
     }
 
     nav ul {
-        flex-direction: column; 
-        padding-left: 0; 
-        margin-top: 10px; 
+        display: none; /* Ocultamos el menú por defecto */
+        position: absolute; /* Para que se superponga al contenido */
+        top: 60px; /* Justo debajo del header */
+        right: 4.6%;
+        width: 100%;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        border-radius: 0px 0px 24px 24px;
+        background-color: rgba(255, 255, 255, 0.4); /* Fondo del menú */
+        padding: 10px 0; /* Espaciado interno */
+        z-index: 100; /* Asegúrate de que esté por encima de otros elementos */
     }
 
     nav ul li {
         font-size: 16px; 
-        padding: 5px 0; 
+        padding: 10px 0; 
     }
     nav .nav {
         display: none;
         flex-direction: column; 
-        width: 100%; 
+        width: 50%; 
     }
 
     nav .nav.show {
         display: flex; 
+        flex-direction: column; /* En columna para que los elementos se apilen */
+        align-items: center;
     }
 
     .menu-toggle {
@@ -510,16 +528,18 @@ input,textarea {
         height: 70vh; /* Ajusta la altura del video en pantallas pequeñas */
     }
 
+
+
     .TextoEnVideo h1 {
         font-size: 2rem;
-        margin-top: 50px;
+        margin-top: 10%;
         margin-left: 20px;
         margin-right: 20px; /* Reduce el tamaño del texto */
     }
 
     .TextoEnVideo h2 {
         font-size: 1.5rem;
-        margin-top: 50px;
+        margin-top: 10%;
         padding-left: 10px;
         padding-right: 10px; /* Reduce el tamaño del segundo encabezado */
     }
@@ -528,12 +548,13 @@ input,textarea {
         width: 60%; /* Asegura que el botón ocupe todo el ancho */
         font-size: 1.5rem;
         margin-bottom: 20px;
-        margin-top: 50px; /* Reduce el tamaño de la fuente del botón */
+        margin-top: 10%; /* Reduce el tamaño de la fuente del botón */
     }
     .texto1 h3{
         font-size: 54px;
-        margin-top: 20px;
+        margin-top: -70px;
         margin-left: 10px;
+        margin-bottom: 15px;
     }
     .primerafila, .segundafila{
         display: none;
@@ -541,28 +562,32 @@ input,textarea {
     .estilos{
         height: 100vh;
         width: 100%;
-        overflow: hidden; /* Oculta el contenido que desborda */
         position: relative;
         display: flex;
         justify-content: center;
         align-items: center;
+        padding-top: 0;
     }
     .carrusel{
         display: flex; /* Disposición horizontal de los elementos */
         transition: transform 0.5s ease; /* Transición suave para el desplazamiento */
-        height: 90vh;
+        height: 75vh;
+        overflow-x: auto;
     }
     .carruselitem{
         width: 80%;
         margin-left: 20px;
-        height: 80vh;
+        height: 75vh;
         flex-shrink: 0;
         border-radius: 24px;
+        position: relative;
+        background-color: #000000;
     }
     .carruselitem img{
         width: 100%;
         height: 100%;
         border-radius: 24px;
+        opacity: 0.8;
     }
     .divisor{
         overflow-x: hidden;
@@ -580,11 +605,21 @@ input,textarea {
             transform: translateX(0);
         }
         100% {
-            transform: translateX(-3000%); /* Mueve todo el contenido fuera de la vista */
+            transform: translateX(-2000%); /* Mueve todo el contenido fuera de la vista */
         }
     }
 
-    .primerafila1, .segundafila1{
+
+    .ofrecemos{
+        display: none;
+    }
+    .ofrecemos1{
+        display: block;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        overflow: hidden;
+    }
+    .primerafila2, .segundafila2{
         display: flex;
         flex-direction: column;
         padding-left: 4.6%;
@@ -598,27 +633,33 @@ input,textarea {
     .contacto {
         flex-direction: column; /* Cambia la dirección del flex para un diseño vertical */
         align-items: center;
-        padding-top: 30px;
+        padding-top: 20px;
         padding-right: 10px;
         padding-left: 10px;
-        padding-bottom: 20px; /* Centra los elementos */
+        padding-bottom: 10px; /* Centra los elementos */
     }
 
     .formulario {
         width: 90%; /* Ajusta el ancho del formulario */
         padding: 0px;
-        margin-bottom: 50px; /* Reduce el padding interno */
+        margin-bottom: 5%; /* Reduce el padding interno */
+        height: 100vh;
     }
 
     .texto {
         width: 90%; /* Ajusta el ancho del texto */
-        margin-top: 20px;
+        margin-top: 0px;
         margin-right: 0;
         margin-left: 0;
         display: flex;
         flex-direction: column;
         text-align: center; /* Añade margen superior para separación */
     }
+    label {
+        display: block; 
+        margin-bottom: 20px;
+    }
+    
     .texto h3{
         margin-top: 0px;
         padding-top: 0;
