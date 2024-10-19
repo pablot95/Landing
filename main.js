@@ -58,10 +58,10 @@ function resetButton() {
 */
 
 
-document.addEventListener("DOMContentLoaded", function() {
+/*document.addEventListener("DOMContentLoaded", function() {
     const rellax = new Rellax('.rellax', {
     });
-});
+});*/
 
 
 
@@ -81,7 +81,7 @@ function type() {
         if (charIndex < texts[index].length) {
             typingElement.textContent += texts[index].charAt(charIndex);
             charIndex++;
-            setTimeout(type, 70); // Ajusta la velocidad de escritura
+            setTimeout(type, 50); // Ajusta la velocidad de escritura
         } else {
             // Inicia el borrado después de un tiempo
             setTimeout(() => {
@@ -100,14 +100,14 @@ function type() {
             index = (index + 1) % texts.length; // Cambia al siguiente texto en bucle
             setTimeout(() => {
                 type();
-            }, 1000); // Espera un poco antes de comenzar a escribir el nuevo texto
+            }, 0); // Espera un poco antes de comenzar a escribir el nuevo texto
         }
     }
 }
 
-type(); // Inicia el efecto
-
-type(); 
+setTimeout(() => {
+    type(); // Inicia el efecto
+}, 1000);
 
 
 
