@@ -58,10 +58,25 @@ function resetButton() {
 */
 
 
-/*document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function() {
     const rellax = new Rellax('.rellax', {
+        center:true,
     });
-});*/
+});
+
+/*const imageContainer = document.getElementById('containerrellax');
+
+    // Función para inicializar Rellax cuando el contenedor está visible
+    const observerRellax = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                rellax.refresh(); // Asegúrate de refrescar Rellax si es necesario
+            }
+        });
+    });
+
+    // Observa el contenedor
+    observerRellax.observe(containerrellax);*/
 
 
 
@@ -155,3 +170,18 @@ menuToggle.addEventListener('click', function() {
 
 
 
+
+const container = document.getElementById('imageContainer');
+
+let position = 0; // Posición inicial
+
+function animate() {
+    position -= 3; // Mover hacia la izquierda
+    if (Math.abs(position) >= container.scrollWidth / 2) { 
+        position = 0; // Reiniciar la posición al inicio
+    }
+    container.style.transform = `translateX(${position}px)`; // Aplicar la transformación
+    requestAnimationFrame(animate); // Llamar a la función de nuevo en el siguiente frame
+}
+
+animate();

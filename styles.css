@@ -7,7 +7,7 @@
 
 }
 body{
-    overflow-x: hidden;
+    overflow-x: auto;
     margin-top: -60px;
 }
 *::-webkit-scrollbar {
@@ -35,6 +35,10 @@ header{
     top: 0;
     padding-right: 4.6%;
     transition: top 0.5s ease;
+}
+header a{
+    text-decoration: none;
+    margin-left: 4.6%;
 }
 header h1{
     margin-left: 4.6%;
@@ -146,46 +150,111 @@ nav a:hover {
 
 
 .divisor{
-    height: 300px;
+    height: 150vh;
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 2%;
-    margin-bottom: 2%;
+    position: relative;
+    overflow: hidden;
+    background-color: #303030;
 }
 
-.logosservicios{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
+.fondodivisor{
+    width: 100%;
+    height: 150%;
+}
+.fondodivisor img{
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
 }
 
-.divisor img{
-    max-width: 100%;
-    height: 200px;
-    transition: transform 0.3s ease;
-    cursor: pointer;
-    padding: 0px 40px;
-    animation: scroll 10s linear infinite;
-}
-.divisor img:hover, .divisor p:hover{
-    transform: scale(1.1);
-}
+
+
 .divisor p{
     max-width: 100%;
     transition: transform 0.3s ease;
     cursor: pointer;
     padding: 0px 40px;
-    animation: scroll 10s linear infinite;
-    font-size: 32px;
+    font-size: 100px;
     margin-top: 10px;
+    font-family: "Satisfy", cursive;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    text-shadow: 2px 2px 3px black
 }
 
-.divisor div {
-    flex: 0 0 auto; /* Evita que los elementos se compriman */
+.htmlimg{
+    position: absolute;
+    top: 20%;
+    left: 45%;
+    max-width: 100%;
+    height: 320px;
 }
-
+.htmlp{
+    position: absolute;
+    top: 38%;
+    left: 55%;
+}
+.javaimg{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    max-width: 100%;
+    height: 320px;
+}
+.javap{
+    position: absolute;
+    top: 20%;
+    left: 10%;
+}
+.firebaseimg{
+    position: absolute;
+    bottom: 25%;
+    left: 7%;
+    max-width: 100%;
+    height: 320px;
+}
+.firebasep{
+    position: absolute;
+    bottom: 20%;
+    left: 3%;
+}
+.figmaimg{
+    position: absolute;
+    bottom: 15%;
+    right: 5%;
+    max-width: 100%;
+    height: 320px;
+}
+.figmap{
+    position: absolute;
+    bottom: 15%;
+    right: 2%;
+}
+.reactimg{
+    position: absolute;
+    bottom: 10%;
+    left: 40%;
+    max-width: 100%;
+    height: 320px;
+}
+.reactp{
+    position: absolute;
+    bottom: 30%;
+    left: 35%;
+}
+.cssimg{
+    position: absolute;
+    top: 4%;
+    right: 4%;
+    max-width: 100%;
+    height: 320px;
+}
+.cssp{
+    position: absolute;
+    top: 20%;
+    right: 2%;
+}
 @keyframes scroll {
     0% {
         transform: translateX(0);
@@ -453,7 +522,7 @@ input,textarea {
     padding-left: 4.6%;
     padding-right: 4.6%;
     opacity: 0;
-    animation-duration: 4s;
+    animation-duration: 6s;
 }
 .segundafila1{
     display: flex;
@@ -462,7 +531,7 @@ input,textarea {
     gap: 5%;
     margin-top: 5%;
     opacity: 0;
-    animation-duration: 4s;
+    animation-duration: 6s;
     
 }
 
@@ -473,13 +542,12 @@ input,textarea {
 }
 .cuadradito{
     width: 29%;
-    height: 400px;
+    height: 60%;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     border-radius: 24px;
     text-align: center;
     padding: 30px;
     opacity: 1;
-
     transition: transform 0.5s ease;
     cursor: pointer;
     
@@ -507,6 +575,9 @@ input,textarea {
 
 
 @media screen and (max-width: 440px) {
+    body{
+        overflow-x: hidden;
+    }
     header {
         justify-content: space-between;
         align-items: center;
@@ -565,14 +636,14 @@ input,textarea {
 
     .TextoEnVideo h1 {
         font-size: 2rem;
-        margin-top: 10%;
+        margin-top: 5%;
         margin-left: 20px;
         margin-right: 20px; /* Reduce el tamaño del texto */
     }
 
     .TextoEnVideo h2 {
         font-size: 1.5rem;
-        margin-top: 10%;
+        margin-top: 15%;
         padding-left: 10px;
         padding-right: 10px; /* Reduce el tamaño del segundo encabezado */
     }
@@ -581,10 +652,10 @@ input,textarea {
         width: 60%; /* Asegura que el botón ocupe todo el ancho */
         font-size: 1.5rem;
         margin-bottom: 20px;
-        margin-top: 10%; /* Reduce el tamaño de la fuente del botón */
+        margin-top: 15%; /* Reduce el tamaño de la fuente del botón */
     }
     .texto1 h3{
-        font-size: 54px;
+        font-size: 44px;
         margin-top: -70px;
         margin-left: 10px;
         margin-bottom: 15px;
@@ -602,8 +673,8 @@ input,textarea {
         padding-top: 0;
     }
     .carrusel{
-        display: flex; /* Disposición horizontal de los elementos */
-        transition: transform 0.5s ease; /* Transición suave para el desplazamiento */
+        display: flex; 
+        transition: transform 0.5s ease; 
         height: 75vh;
         overflow-x: auto;
     }
@@ -620,29 +691,84 @@ input,textarea {
         width: 100%;
         height: 100%;
         border-radius: 24px;
-        opacity: 0.8;
+        opacity: 1;
     }
     .divisor{
-        overflow-x: hidden;
-        height: 200px;
+        height: 90vh;
     }
-
     .divisor img {
-        height: 150px;
+        height: 170px;
+        width: auto;
         padding: 0px 10px;
-        animation: scroll 20s linear infinite; /* Ajusta el tamaño de las imágenes en el divisor */
+    }
+    .divisor p{
+        font-size: 52px;
+    }
+    .htmlimg{
+        position: absolute;
+        top: 35%;
+        left: 35%;
+    }
+    .htmlp{
+        position: absolute;
+        top: 30%;
+        left: 42%;
+    }
+    .javaimg{
+        position: absolute;
+        top: 5%;
+        left: 3%;
+    }
+    .javap{
+        position: absolute;
+        top: 20%;
+        left: 6%;
+    }
+    .firebaseimg{
+        position: absolute;
+        bottom: 25%;
+        left: 1%;
+    }
+    .firebasep{
+        position: absolute;
+        bottom: 30%;
+        left: 1%;
+    }
+    .figmaimg{
+        position: absolute;
+        bottom: 20%;
+        right: 1%;
+    }
+    .figmap{
+        position: absolute;
+        bottom: 30%;
+        right: 2%;
+    }
+    .reactimg{
+        position: absolute;
+        bottom: 7%;
+        left: 30%;
+    }
+    .reactp{
+        position: absolute;
+        bottom: 10%;
+        left: 45%;
+    }
+    .cssimg{
+        position: absolute;
+        top: 4%;
+        right: 4%;
+    }
+    .cssp{
+        position: absolute;
+        top: 7%;
+        right: 2%;
     }
 
-    @keyframes scroll {
-        0% {
-            transform: translateX(0);
-        }
-        100% {
-            transform: translateX(-2000%); /* Mueve todo el contenido fuera de la vista */
-        }
+
+    .servicios{
+        font-size: 48px;
     }
-
-
     .ofrecemos{
         display: none;
     }
@@ -661,6 +787,7 @@ input,textarea {
     .cuadradito {
         width: 100%; /* Asegura que los cuadros ocupen el ancho completo */
         margin-bottom: 20px; /* Añade margen inferior entre cuadros */
+        animation-duration: 4s;
     }
 
     .contacto {
